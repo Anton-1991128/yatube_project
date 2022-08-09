@@ -4,8 +4,12 @@ from django.shortcuts import render, get_object_or_404
 
 def index(request):
     posts = Post.objects.order_by('-pub_date')[:10]
+    title = 'Yatube 1.0'
+    text = 'Главная страница проекта'
     context = {
         'posts': posts,
+        'title': title,
+        'text': text,
     }
     return render(request, 'posts/index.html', context) 
 
